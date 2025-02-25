@@ -56,13 +56,13 @@ export const Skills = () => {
                 <Row>
                     <Col>
                         <AnimatedContent
-                        distance={150}
+                        distance={100}
                         direction="vertical"
                         reverse={false}
                         config={{ tension: 80, friction: 20 }}
-                        initialOpacity={0.3}
+                        initialOpacity={0.1}
                         animateOpacity
-                        scale={0.1}
+                        scale={1.5}
                         threshold={0.2}>
                             <div className='skill-bx'>
                                 <h2>
