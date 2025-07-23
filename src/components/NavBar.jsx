@@ -44,10 +44,10 @@ export const NavBar = () => {
 
             {/* Social Icons */}
             <div className="flex space-x-4 ml-6">
-                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/DarthCoder-afk" target="_blank" rel="noopener noreferrer">
                 <Github className="text-foreground/70 hover:text-primary transition" size={20} />
                 </a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/seanmichaelarriolaborje" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="text-foreground/70 hover:text-primary transition" size={20} />
                 </a>
             </div>
