@@ -48,11 +48,9 @@ export const SkillSection = () => {
 
     return <section id="skills" className="py-21 px-4 relative">
         <div className="container mx-auto max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">My <span className="text-primary">Skills</span></h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center"><span className="text-primary">Skills</span></h2>
 
-             <p className="text-lg md:text-lg text-muted-foreground max-2-2xl mx-auto mb-10">
-                   There are the technologies that I have used and familiar with.                 
-                </p>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">These are the technologies I have worked with and become familiar with</p>
         
             <div className="flex flex-wrap justify-center gap-4 mb-8">
                 {categories.map((category, key) => (
