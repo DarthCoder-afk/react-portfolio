@@ -24,7 +24,7 @@ export const NavBar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    return <nav className={cn("fixed w-full z-40 transition-all duration-200",
+    return <nav className={cn("fixed w-full z-40 font-semibold shadow-xs bg-[#f8fafc] transition-all duration-200",
         Scrolled ? "py-3 bg-secondary/10 backdrop-blur-lg shadow-lg" : "py-5",
     )}>
         <div className="container mx-auto flex items-center justify-between px-4">
