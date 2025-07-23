@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { X, Menu } from "lucide-react";
+import { X, Menu, Github, Linkedin } from "lucide-react";
 import { useEffect, useState } from "react";
 const navItems = [
     { name: "Home", href: "#hero" },
@@ -16,7 +16,8 @@ export const NavBar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.screenY > 10);
+            console.log("scrollY:", window.scrollY);
+            setScrolled(window.scrollY > 10);
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -24,27 +25,37 @@ export const NavBar = () => {
     }, []);
 
     return <nav className={cn("fixed w-full z-40 transition-all duration-200",
-        Scrolled ? "py-3 bg-primary/20 backdrop-blur-md shadow-xs" : "py-5",
+        Scrolled ? "py-3 bg-secondary/10 backdrop-blur-lg shadow-lg" : "py-5",
     )}>
-        <div className="container flex items-center justify-between">
-            <a href="#hero" className="text-xl font-bold text-primary flex items-center">
+        <div className="container mx-auto flex items-center justify-between px-4">
+            {/* <a href="#hero" className="text-xl font-bold text-primary flex items-center">
                 <span className="relative z-10">
                     <span className="text-glow text-foreground">Sean</span> 
                 </span>
-            </a>
+            </a> */}
 
             {/* Desktop View */}
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex mx-auto space-x-8">
                 {navItems.map((item, key) => (
-                    <a key={key} href={item.href} className="text-foreground/80 hover:text-primary transition-colors duration-200 hover:bg-primary/10 hover:border hover:border-primary rounded-lg px-1 py-2 ">
+                    <a key={key} href={item.href} className="text-foreground/80 hover:text-primary transition-colors duration-200 ">
                         {item.name}</a>
                 ))}
+            </div>
+
+            {/* Social Icons */}
+            <div className="flex space-x-4 ml-6">
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                <Github className="text-foreground/70 hover:text-primary transition" size={20} />
+                </a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="text-foreground/70 hover:text-primary transition" size={20} />
+                </a>
             </div>
 
             {/* Mobile View */}
 
             <button onClick={()=> setIsMenuOpen((prev) => !prev)} 
-            className="md:hidden text-foreground z-50"
+            className="md:hidden text-foreground z-50 align-right"
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}>
                 {isMenuOpen? <X size={24} /> : <Menu size={24} />}</button>
 
