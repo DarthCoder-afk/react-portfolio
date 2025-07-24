@@ -20,8 +20,8 @@ export const Home = () => {
            <div className="fixed inset-0 w-full h-full min-h-full z-0 pointer-events-none">
                 <Particles
                    dotSize={1}
-                    gap={15}
-                    baseColor="#c7c6c6ff"
+                    gap={14}
+                    baseColor="#b3b1b1ff"
                     activeColor="#bebebeff"
                     proximity={70}
                     shockRadius={200}
