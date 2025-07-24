@@ -8,7 +8,7 @@ export const HeroSection = () => {
             <div className="space-y-6">
                 <div className="transition-transform duration-500 hover:scale-110">
                      <img
-                        src="./src/img/balatik.jpg" // <-- Replace with your image path
+                        src="./profile/balatik.JPG" // <-- Replace with your image path
                         alt="Sean Michael Borje"
                         className="mx-auto rounded-full w-60 h-60 object-cover border-5 gradient-border-primary shadow-lg mb-4 "
                     />
