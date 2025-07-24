@@ -14,7 +14,7 @@ export const HeroSection = () => {
                     />
                 </div>
                
-                <h1 className="text-4xl md:text-6xl font-bold tracking-light">
+                <h1 className="text-2xl md:text-6xl font-bold tracking-light">
                     <span className="opacity-0 animate-fade-in delay-2">
                         <TextType 
                             text={["Hi! Welcome to my Portfolio", "My name is", "Sean Michael A. Borje"]}
@@ -25,9 +25,9 @@ export const HeroSection = () => {
                         />
                     </span>
                 </h1>
-                <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-4">
+                <p className="text-md md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-4">
                     I’m a passionate software developer who loves turning ideas into interactive experiences.
-                    From front-end design to back-end logic, I build tools that make a difference 🧑‍💻.                   
+                    From front-end design to back-end logic, I build tools that make a difference 🧑‍💻💻                   
                 </p>
 
             </div>
