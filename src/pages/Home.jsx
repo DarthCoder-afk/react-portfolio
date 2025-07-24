@@ -1,4 +1,5 @@
 import { AboutMe } from "../components/AboutMe"
+import { ContactSection } from "../components/ContactSection"
 import { HeroSection } from "../components/HeroSection"
 import { NavBar } from "../components/NavBar"
 import Particles from "../components/Particles"
@@ -37,6 +38,7 @@ export const Home = () => {
                 <AboutMe/>
                 <SkillSection/>
                 <ProjectSection/>
+                <ContactSection/>
            </main>
            {/* Footer */}
         </div>
