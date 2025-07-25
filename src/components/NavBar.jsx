@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { X, Menu, Github, Linkedin, Instagram, Facebook } from "lucide-react";
+import { X, Menu, Github, Linkedin, Facebook } from "lucide-react";
 import { useEffect, useState } from "react";
 const navItems = [
     { name: "Home", href: "#hero" },
@@ -35,7 +35,7 @@ export const NavBar = () => {
     return <nav className={cn("fixed w-full z-40 font-semibold shadow-xs bg-[#f8fafc] transition-all duration-200",
         Scrolled ? "py-3 bg-[#f8fafc] shadow-lg" : "py-5",
     )}>
-        <div className="container mx-auto flex items-center justify-between px-4">
+        <div className="container mx-auto flex items-center justify-between px-4 py-1">
             <a href="#hero" className="text-xl font-bold text-primary flex items-center hidden md:flex">
                 <span className="relative z-10">
                     <span className="text-foreground">Sean</span> 
@@ -43,7 +43,7 @@ export const NavBar = () => {
             </a>
 
             {/* Desktop View */}
-            <div className="hidden md:flex mx-auto space-x-8">
+            <div className="hidden md:flex flex-1 justify-center space-x-8">
                 {navItems.map((item, key) => (
                     <a key={key} href={item.href} className="border-b border-transparent text-foreground/80 hover:text-primary hover:border-primary hover:border-b-2 transition-colors duration-200 ">
                         {item.name}</a>
@@ -51,15 +51,12 @@ export const NavBar = () => {
             </div>
 
             {/* Social Icons */}
-            <div className="flex space-x-4 ml-6 hidden md:flex">
+            <div className="flex space-x-4 ml-auto hidden md:flex">
                 <a href="https://github.com/DarthCoder-afk" target="_blank" rel="noopener noreferrer">
                 <Github className="text-foreground/70 hover:text-primary transition" size={20} />
                 </a>
                 <a href="https://www.linkedin.com/in/seanmichaelarriolaborje" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="text-foreground/70 hover:text-primary transition" size={20} />
-                </a>
-                <a href="https://www.instagram.com/sean_borje/" target="_blank" rel="noopener noreferrer">
-                <Instagram className="text-foreground/70 hover:text-primary transition" size={20} />
                 </a>
                  <a href="https://www.facebook.com/seanmichael.borje.7/" target="_blank" rel="noopener noreferrer">
                 <Facebook className="text-foreground/70 hover:text-primary transition" size={20} />
@@ -81,7 +78,7 @@ export const NavBar = () => {
             )}>
                 <div className="flex flex-col space-y-8 text-xl">
                     {navItems.map((item, key) => (
-                        <a key={key} href={item.href} className="text-foreground/80 hover:text-primary transition-colores duration-200 " onClick={() => setIsMenuOpen(false)}>
+                        <a key={key} href={item.href} className="text-foreground/80 hover:text-primary transition-colors duration-200 " onClick={() => setIsMenuOpen(false)}>
                             {item.name}</a>
                     ))}
 
@@ -92,9 +89,6 @@ export const NavBar = () => {
                         </a>
                         <a href="https://www.linkedin.com/in/seanmichaelarriolaborje" target="_blank" rel="noopener noreferrer">
                         <Linkedin className="text-foreground/70 hover:text-primary transition" size={24} />
-                        </a>
-                        <a href="https://www.instagram.com/sean_borje/" target="_blank" rel="noopener noreferrer">
-                        <Instagram className="text-foreground/70 hover:text-primary transition" size={24} />
                         </a>
                         <a href="https://www.facebook.com/seanmichael.borje.7/" target="_blank" rel="noopener noreferrer">
                         <Facebook className="text-foreground/70 hover:text-primary transition" size={24} />
