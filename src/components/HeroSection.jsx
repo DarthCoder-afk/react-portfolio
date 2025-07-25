@@ -10,7 +10,7 @@ export const HeroSection = () => {
                      <img
                         src="./profile/balatik.JPG" // <-- Replace with your image path
                         alt="Sean Michael Borje"
-                        className="mx-auto rounded-full w-60 h-60 object-cover border-5 gradient-border-primary shadow-lg mb-4 "
+                        className="mx-auto rounded-full w-60 h-60 object-cover border-3 border-[#343a40] shadow-lg mb-4 "
                     />
                 </div>
                

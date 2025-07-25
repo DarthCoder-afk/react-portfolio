@@ -264,7 +264,7 @@ const Particles = ({
 
   return (
     <section
-      className={`p-4 flex items-center justify-center h-full w-full relative ${className}`}
+      className={`p-4 flex items-center bg-[#f8f9fa] justify-center h-full w-full relative ${className}`}
       style={style}
     >
       <div ref={wrapperRef} className="w-full h-full relative">

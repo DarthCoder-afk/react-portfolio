@@ -23,10 +23,10 @@ export const Home = () => {
                 <Particles
                    dotSize={1}
                     gap={14}
-                    baseColor="#b3b1b1ff"
-                    activeColor="#bebebeff"
-                    proximity={70}
-                    shockRadius={200}
+                    baseColor="#adb5bd"
+                    activeColor="#212529"
+                    proximity={120}
+                    shockRadius={250}
                     shockStrength={5}
                     resistance={750}
                     returnDuration={1.5}

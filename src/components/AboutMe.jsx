@@ -8,7 +8,7 @@ const images = [
 ];
 
 export const AboutMe = () => {
-    return <section id="about" className="py-24 px-4 relative bg-secondary">
+    return <section id="about" className="py-24 px-4 relative bg-[#f8f9fa]">
         <div className="container mx-auto max-w-5xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
                 Get To Know <span className="text-primary">Me</span>

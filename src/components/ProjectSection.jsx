@@ -34,7 +34,7 @@ const proj = [
 ]
 
 export const ProjectSection = () => {
-    return <section id="projects" className="py-24 px-4 relative bg-secondary">
+    return <section id="projects" className="py-24 px-4 relative bg-[#f8f9fa]">
         <div className="container mx-auto max-w-5xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Featured Projects</h2>
 

@@ -32,7 +32,7 @@ export const NavBar = () => {
         }
     }, [isMenuOpen]);
 
-    return <nav className={cn("fixed w-full z-40 font-semibold shadow-xs bg-[#f8fafc] transition-all duration-200",
+    return <nav className={cn("fixed w-full z-40 font-semibold transition-all duration-200",
         Scrolled ? "py-3 bg-[#f8fafc] shadow-lg" : "py-5",
     )}>
         <div className="container mx-auto flex items-center justify-between px-4 py-1">
