@@ -29,6 +29,36 @@ const proj = [
         tags: ["Vb.net", "MySQL"],
         demoUrl: "#",
         githubUrl: "#",
+    },
+
+    {
+        id: 4,
+        title: "PillSpenser: IOT Based Medicine Dispenser",
+        description: "An IOT device that dispenses medicine based on the patient's prescription",
+        image: "/projects/project-4.png",
+        tags: ["Arduino", "C++"],
+        demoUrl: "#",
+        githubUrl: "#",
+    },
+
+    {
+        id: 5,
+        title: "Crash Detection Device",
+        description: "An IOT device that detects car crashes and alerts emergency services",
+        image: "/projects/project-5.png",
+        tags: ["Arduino", "C++"],
+        demoUrl: "#",
+        githubUrl: "#",
+    },
+
+    {
+        id: 6,
+        title: "Wire Cutter Machine",
+        description: "A device that automates the wire cutting process",
+        image: "/projects/project-6.png",
+        tags: ["Arduino", "C++"],
+        demoUrl: "#",
+        githubUrl: "#",
     }
 
 ]
