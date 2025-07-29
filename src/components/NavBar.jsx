@@ -33,35 +33,48 @@ export const NavBar = () => {
     }, [isMenuOpen]);
 
     return <nav className={cn("fixed w-full z-40 font-semibold transition-all duration-200",
-        Scrolled ? "py-3 bg-[#f8fafc] shadow-lg" : "py-5",
+        Scrolled ? "py-3 bg-[#f8fafc] shadow-lg md:bg-transparent md:shadow-none" : "py-5 bg-transparent",
     )}>
-        <div className="container mx-auto flex items-center justify-between px-4 py-1">
-            <a href="#hero" className="text-xl font-bold text-primary flex items-center hidden md:flex">
-                <span className="relative z-10">
-                    <span className="text-foreground">Sean</span> 
-                </span>
-            </a>
+        <div className="container mx-auto flex items-center justify-between px-4">
+           
+             {/* Desktop View */}
+            <div className="hidden md:flex w-full justify-center mt-1">
+                <div className="w-full max-w-5xl bg-[#f8f9fa] border border-[#6C757D] rounded-full shadow-lg px-6 py-4 flex items-center justify-between">
+                    
+                    {/* Left: Name */}
+                    <a href="#hero" className="text-lg font-bold text-primary">
+                        <span className="text-foreground">Sean</span>
+                    </a>
 
-            {/* Desktop View */}
-            <div className="hidden md:flex flex-1 justify-center space-x-8">
-                {navItems.map((item, key) => (
-                    <a key={key} href={item.href} className="border-b border-transparent text-foreground/80 hover:text-primary hover:border-primary hover:border-b-2 transition-colors duration-200 ">
-                        {item.name}</a>
-                ))}
+                    {/* Center: Navigation */}
+                    <div className="flex space-x-6 gap-4">
+                        {navItems.map((item, key) => (
+                            <a
+                            key={key}
+                            href={item.href}
+                            className="text-sm font-medium text-gray-800 hover:text-primary transition-colors"
+                            >
+                            {item.name}
+                            </a>
+                        ))}
+                    </div>
+
+                    {/* Right: Social Icons */}
+                    <div className="flex space-x-4">
+                        <a href="https://github.com/DarthCoder-afk" target="_blank" rel="noopener noreferrer">
+                            <Github className="text-foreground/70 hover:text-primary transition" size={17} />
+                        </a>
+                        <a href="https://www.linkedin.com/in/seanmichaelarriolaborje" target="_blank" rel="noopener noreferrer">
+                            <Linkedin className="text-foreground/70 hover:text-primary transition" size={17} />
+                        </a>
+                        <a href="https://www.facebook.com/seanmichael.borje.7/" target="_blank" rel="noopener noreferrer">
+                            <Facebook className="text-foreground/70 hover:text-primary transition" size={17} />
+                        </a>
+                    </div>
+
+                </div>
             </div>
 
-            {/* Social Icons */}
-            <div className="flex space-x-4 ml-auto hidden md:flex">
-                <a href="https://github.com/DarthCoder-afk" target="_blank" rel="noopener noreferrer">
-                <Github className="text-foreground/70 hover:text-primary transition" size={20} />
-                </a>
-                <a href="https://www.linkedin.com/in/seanmichaelarriolaborje" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="text-foreground/70 hover:text-primary transition" size={20} />
-                </a>
-                 <a href="https://www.facebook.com/seanmichael.borje.7/" target="_blank" rel="noopener noreferrer">
-                <Facebook className="text-foreground/70 hover:text-primary transition" size={20} />
-                </a>
-            </div>
 
             {/* Mobile View */}
 
