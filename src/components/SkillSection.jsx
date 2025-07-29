@@ -50,7 +50,7 @@ export const SkillSection = () => {
 
     const filteredSKills = skills.filter((skill) => activeCategory === "all" || skill.category === activeCategory);
 
-    return <section id="skills" className="py-21 px-4 relative">
+    return <section id="skills" className="py-24 px-4 relative">
         <div className="container mx-auto max-w-5xl">
             <motion.h2
             variants={fadeIn('up', 0.2)}
