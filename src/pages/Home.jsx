@@ -21,11 +21,11 @@ export const Home = () => {
            {/* Background Effects */}
            <div className="fixed inset-0 w-full h-full min-h-full z-0 pointer-events-none">
                 <Particles
-                   dotSize={1}
+                   dotSize={1.4}
                     gap={14}
-                    baseColor="#adb5bd"
+                    baseColor="#c8ced4ff"
                     activeColor="#212529"
-                    proximity={120}
+                    proximity={100}
                     shockRadius={250}
                     shockStrength={5}
                     resistance={750}
