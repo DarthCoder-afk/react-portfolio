@@ -1,5 +1,7 @@
 import { Briefcase, Code, MapPin, User } from "lucide-react"
 import Stack from "./Stack"
+import {motion} from "framer-motion"
+import { fadeIn } from "../variants";
 
 const images = [
   { id: 1, img: "./stacks/balatik.JPG" },
@@ -10,12 +12,25 @@ const images = [
 export const AboutMe = () => {
     return <section id="about" className="py-24 px-4 relative">
         <div className="container mx-auto max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-                Get To Know <span className="text-primary">Me</span>
-            </h2>
+            <motion.div
+                variants={fadeIn('up', 0.2)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: true, amount: 0.3 }}>
+                      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+                            Get To Know <span className="text-primary">Me</span>
+                      </h2>
+
+            </motion.div>
+          
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div className="order-2 md:order-1 space-y-6 bg-secondary card-hover border rounded-lg shadow-xs p-6">
+                <motion.div 
+                    variants={fadeIn('right', 0.4)}
+                    initial="hidden"
+                    whileInView={"show"}
+                    viewport={{ once: true, amount: 0.3 }}
+                className="order-2 md:order-1 space-y-6 bg-secondary card-hover border rounded-lg shadow-xs p-6">
                     <h3 className="text-2xl font-semibold">Software Developer</h3>
 
                     <p className="text-muted-foreground">I am a fresh graduate and aspiring software developer with a passion for building software solutions tailored to user or client needs. 
@@ -38,9 +53,14 @@ export const AboutMe = () => {
                             View Resume
                         </a>
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="order-1 ml-3 md:order-2 grid grid-cols-1 gap-6 md:flex justify-items-center mb-1">
+                <motion.div 
+                    variants={fadeIn('left', 0.4)}
+                    initial="hidden"
+                    whileInView={"show"}
+                    viewport={{ once: true, amount: 0.3 }}
+                className="order-1 ml-3 md:order-2 grid grid-cols-1 gap-6 md:flex justify-items-center mb-1">
 
 
                     <Stack
@@ -92,7 +112,7 @@ export const AboutMe = () => {
 
                    
                     
-                </div>
+                </motion.div>
 
 
             </div>
