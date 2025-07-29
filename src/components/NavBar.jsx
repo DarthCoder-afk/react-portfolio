@@ -23,7 +23,6 @@ export const NavBar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            console.log("scrollY:", window.scrollY);
             setScrolled(window.scrollY > 10);
         };
 
@@ -42,15 +41,14 @@ export const NavBar = () => {
     return <nav className={cn("fixed w-full z-40 font-semibold transition-all duration-200",
         Scrolled ? "py-3 bg-[#f8fafc] shadow-lg md:bg-transparent md:shadow-none" : "py-5 bg-transparent",
     )}>
-        <motion.div 
-        variants={fadeIn('down', 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: true, amount: 0.3}}
-        className="container mx-auto flex items-center justify-between px-4">
-           
+        <div className="container mx-auto flex items-center justify-between px-4">
              {/* Desktop View */}
-            <div className="hidden md:flex w-full justify-center mt-1 relative">
+            <motion.div 
+                variants={fadeIn('down', 0.2)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: true, amount: 0.3}}
+                className="hidden md:flex w-full justify-center mt-1 relative">
                 <div className="w-full max-w-5xl bg-[#f8f9fa] border border-[#6C757D] rounded-full shadow-lg px-6 py-4 flex items-center justify-between relative">
                     
                     {/* Left: Name */}
@@ -107,7 +105,7 @@ export const NavBar = () => {
                     </div>
 
                 </div>
-            </div>
+            </motion.div>
 
 
             {/* Mobile View */}
@@ -143,6 +141,6 @@ export const NavBar = () => {
                     </div>
                 </div>
             </div>
-        </motion.div>
+        </div>
     </nav>
 }
