@@ -36,7 +36,7 @@ export const HeroSection = () => {
                     </span>
                 </motion.h1>
                 <motion.p 
-                variants={fadeIn('left', 0.2)}
+                variants={fadeIn('up', 0.2)}
                 initial="hidden"
                 whileInView={"show"}
                 viewport={{ once: true, amount: 0.3 }}
@@ -48,7 +48,7 @@ export const HeroSection = () => {
             </div>
 
             <motion.div 
-            variants={fadeIn('right', 0.2)}
+            variants={fadeIn('up', 0.2)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: true, amount: 0.3 }}
