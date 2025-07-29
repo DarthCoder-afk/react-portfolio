@@ -1,4 +1,6 @@
 import { ExternalLink, Github } from "lucide-react"
+import {motion} from "framer-motion"
+import { fadeIn } from "../variants";
 
 const proj = [
     {
@@ -66,12 +68,27 @@ const proj = [
 export const ProjectSection = () => {
     return <section id="projects" className="py-24 px-4 relative">
         <div className="container mx-auto max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Featured Projects</h2>
+            <motion.h2 
+            variants={fadeIn('up', 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: true, amount: 0.3 }} 
+            className="text-3xl md:text-4xl font-bold mb-4 text-center">Featured Projects</motion.h2>
 
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">Here are some of my recent projects. Each project was carefully 
-                crafted with attention to detail, client-based, performance and user-experience</p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.p 
+            variants={fadeIn('left', 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: true, amount: 0.3 }} 
+            className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">Here are some of my recent projects. Each project was carefully
+                crafted with attention to detail, client-based, performance and user-experience</motion.p>
+
+            <motion.div 
+            variants={fadeIn('down', 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: true, amount: 0.3 }} 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {proj.map((project, key) => (
                     <div key={key} className="group bg-card rounded-lg border overflow-hidden shadow-xs card-hover">
                         <div className="h-38 overflow-hidden">
@@ -110,7 +127,7 @@ export const ProjectSection = () => {
                        
                     </div>
                 ))}
-            </div>
+            </motion.div>
 
         </div>
 

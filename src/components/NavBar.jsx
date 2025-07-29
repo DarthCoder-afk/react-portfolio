@@ -1,6 +1,8 @@
 import { cn } from "@/lib/utils";
 import { X, Menu, Github, Linkedin, Facebook } from "lucide-react";
 import { useEffect, useState } from "react";
+import {motion} from "framer-motion"
+import { fadeIn } from "../variants";
 const navItems = [
     { name: "Home", href: "#hero" },
     { name: "About", href: "#about" },
@@ -35,7 +37,12 @@ export const NavBar = () => {
     return <nav className={cn("fixed w-full z-40 font-semibold transition-all duration-200",
         Scrolled ? "py-3 bg-[#f8fafc] shadow-lg md:bg-transparent md:shadow-none" : "py-5 bg-transparent",
     )}>
-        <div className="container mx-auto flex items-center justify-between px-4">
+        <motion.div 
+        variants={fadeIn('down', 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: true, amount: 0.3}}
+        className="container mx-auto flex items-center justify-between px-4">
            
              {/* Desktop View */}
             <div className="hidden md:flex w-full justify-center mt-1">
@@ -109,6 +116,6 @@ export const NavBar = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     </nav>
 }

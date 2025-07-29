@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import {motion} from "framer-motion"
+import { fadeIn } from "../variants";
+import { a } from "framer-motion/client";
 
 const skills = [
   // Web Development
@@ -49,28 +52,53 @@ export const SkillSection = () => {
 
     return <section id="skills" className="py-21 px-4 relative">
         <div className="container mx-auto max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center"><span className="text-primary">Skills</span></h2>
+            <motion.h2
+            variants={fadeIn('up', 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: true, amount: 0.3 }} 
+            className="text-3xl md:text-4xl font-bold mb-4 text-center"><span className="text-primary">Skills</span></motion.h2>
 
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">These are the technologies I have worked with and become familiar with</p>
-        
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <motion.p 
+            variants={fadeIn('left', 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: true, amount: 0.3 }} 
+            className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">These are the technologies I have worked with and become familiar with</motion.p>
+
+            <motion.div 
+            variants={fadeIn('right', 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: true, amount: 0.3 }} 
+            className="flex flex-wrap justify-center gap-4 mb-8">
                 {categories.map((category, key) => (
                     <button key={key} className={cn("px-5 py-2 rounded-full transition-colors duration-300 capitalize",
                         activeCategory == category ? "bg-primary text-primary-foreground" : "bg-secondary/70 text-foreground hover: bg-secondary")} onClick={() => setActiveCategory(category)}>
                         {category}
                     </button>
                 ))}
-            </div>
+            </motion.div>
         
         </div>
 
-        <div className="grid grid-cols-3 lg:grid-cols-4 gap-3 px-4 place-items-center">
+        <motion.div 
+        key={activeCategory}
+        variants={fadeIn('up', 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: true, amount: 0.3 }} 
+        className="grid grid-cols-3 lg:grid-cols-4 gap-3 px-4 place-items-center">
             {filteredSKills.map((skill, key) => (
-                <div key={key} className="w-20 h-20 md:w-32 h-32 flex items-center justify-center">
+                <motion.div 
+                variants={fadeIn('up', 0.2)}
+                initial="hidden"
+                animate={"show"}
+                key={key} className="w-20 h-20 md:w-32 h-32 flex items-center justify-center">
                     <img src={skill.img} alt={skill.name} className="max-h-full max-w-full object-contain hover:scale-110 transition-transform" title={skill.name} />
-                </div>
+                </motion.div>
             ))}
-        </div>
+        </motion.div>
         
     </section>
 }

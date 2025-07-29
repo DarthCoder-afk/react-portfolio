@@ -26,11 +26,11 @@ export const AboutMe = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <motion.div 
-                    variants={fadeIn('right', 0.4)}
+                    variants={fadeIn('right', 0.2)}
                     initial="hidden"
                     whileInView={"show"}
                     viewport={{ once: true, amount: 0.3 }}
-                className="order-2 md:order-1 space-y-6 bg-secondary card-hover border rounded-lg shadow-xs p-6">
+                className="order-2 md:order-1 space-y-6 bg-secondary border rounded-lg shadow-xs p-6">
                     <h3 className="text-2xl font-semibold">Software Developer</h3>
 
                     <p className="text-muted-foreground">I am a fresh graduate and aspiring software developer with a passion for building software solutions tailored to user or client needs. 

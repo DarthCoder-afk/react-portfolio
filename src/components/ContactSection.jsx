@@ -3,6 +3,8 @@ import { cn } from "@/lib/utils";
 import emailjs from "@emailjs/browser";
 import { useRef, useState} from "react";
 import { useToast } from "@/hooks/use-toast"
+import {motion} from "framer-motion"
+import { fadeIn } from "../variants";
 
 
 export const ContactSection = () => {
@@ -35,13 +37,28 @@ export const ContactSection = () => {
     }
     return <section id="contact" className="py-24 px-4 relative">
         <div className="container mx-auto max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Get In Touch</h2>
+            <motion.h2 
+            variants={fadeIn('up', 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: true, amount: 0.3 }} 
+            className="text-3xl md:text-4xl font-bold mb-4 text-center">Get In Touch</motion.h2>
 
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">If you have a project in mind or are interested in collaboration, 
-                please don’t hesitate to get in touch. I am always open to exploring new opportunities and professional engagements.</p>
+            <motion.p 
+            variants={fadeIn('left', 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: true, amount: 0.3 }} 
+            className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">If you have a project in mind or are interested in collaboration, 
+                please don’t hesitate to get in touch. I am always open to exploring new opportunities and professional engagements.</motion.p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div className="space-y-8">
+                <motion.div 
+                variants={fadeIn('right', 0.2)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: true, amount: 0.3 }} 
+                className="space-y-8">
                     <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
                     <div className="space-y-6 justify-center">
 
@@ -73,13 +90,15 @@ export const ContactSection = () => {
                         </div>
 
                         
-                    </div>
+                    </div>           
+                </motion.div>
 
-                
-                    
-                </div>
-
-                <div className="bg-card p-8 rounded-lg shadow-xs">
+                <motion.div 
+                variants={fadeIn('left', 0.2)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: true, amount: 0.3 }} 
+                className="bg-card p-8 rounded-lg shadow-xs">
                     <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
 
                     <form action="" ref={form} onSubmit={SendEmail} className="space-y-6">
@@ -128,7 +147,7 @@ export const ContactSection = () => {
                             <SendIcon size={16}/>  {isSubmitting ? "Sending..." : "Send Message"}
                         </button>
                     </form>
-                </div>
+                </motion.div>
 
             </div>
         </div>
