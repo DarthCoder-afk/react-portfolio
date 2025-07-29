@@ -15,6 +15,11 @@ const navItems = [
 export const NavBar = () => {
     const[Scrolled, setScrolled] = useState(false);
     const[isMenuOpen, setIsMenuOpen] = useState(false);
+    const [hoverPosition, setHoverPosition] = useState({
+    left: 0,
+    width: 0,
+    opacity: 0,
+    });
 
     useEffect(() => {
         const handleScroll = () => {
@@ -45,8 +50,8 @@ export const NavBar = () => {
         className="container mx-auto flex items-center justify-between px-4">
            
              {/* Desktop View */}
-            <div className="hidden md:flex w-full justify-center mt-1">
-                <div className="w-full max-w-5xl bg-[#f8f9fa] border border-[#6C757D] rounded-full shadow-lg px-6 py-4 flex items-center justify-between">
+            <div className="hidden md:flex w-full justify-center mt-1 relative">
+                <div className="w-full max-w-5xl bg-[#f8f9fa] border border-[#6C757D] rounded-full shadow-lg px-6 py-4 flex items-center justify-between relative">
                     
                     {/* Left: Name */}
                     <a href="#hero" className="text-lg font-bold text-primary">
@@ -54,17 +59,39 @@ export const NavBar = () => {
                     </a>
 
                     {/* Center: Navigation */}
-                    <div className="flex space-x-6 gap-4">
+                    <ul 
+                    onMouseLeave={() => {
+                    setHoverPosition((pv) => ({ ...pv, opacity: 0 }));
+                    }}
+                    className="relative flex space-x-6 ">
                         {navItems.map((item, key) => (
-                            <a
+                            <li
                             key={key}
-                            href={item.href}
-                            className="text-sm font-medium text-gray-800 hover:text-primary transition-colors"
+                            className="relative z-10 cursor-pointer text-sm font-medium text-gray-800 hover:text-secondary transition-colors px-4 py-2"
+                            onMouseEnter={(e) => {
+                                const target = e.currentTarget;
+                                const { width } = target.getBoundingClientRect();
+                                setHoverPosition({
+                                    left: target.offsetLeft - 4, // optional: shift left a bit
+                                    width: width + 8,           // make it wider than the item
+                                    opacity: 1,
+                                });
+                            }}
                             >
-                            {item.name}
-                            </a>
+                            <a href={item.href}>{item.name}</a>
+                            </li>
                         ))}
-                    </div>
+                         <motion.div
+                            layout
+                            transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                            animate={{
+                                left: hoverPosition.left,
+                                width: hoverPosition.width,
+                                opacity: hoverPosition.opacity,
+                            }}
+                            className="absolute top-1/2 -translate-y-1/2 h-10 px-4 rounded-full bg-primary -z-0"
+                        />
+                    </ul>
 
                     {/* Right: Social Icons */}
                     <div className="flex space-x-4">
