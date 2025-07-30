@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: montserrat;
+  src: url('./public/fonts/Montserrat-Bold.ttf') format('truetype');
+}
+
+.montserrat {
+  font-family: montserrat, sans-serif;
+}
+
 @theme {
   --color-border: hsl(var(--border));
   --color-background: hsl(var(--background));

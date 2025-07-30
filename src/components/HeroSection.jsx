@@ -3,6 +3,7 @@ import TextType from "./TextType"
 import {motion} from "framer-motion"
 import { fadeIn } from "../variants";
 
+
 export const HeroSection = () => {
     return <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center px-4">
         <div className="container max-w-4xl mx-auto text-center z-10">
@@ -10,7 +11,7 @@ export const HeroSection = () => {
             <div className="space-y-6">
               
                 <motion.img
-                src="./profile/balatik.JPG" // <-- Replace with your image path
+                src="./profile/formal.JPG" 
                 alt="Sean Michael Borje"
                 variants={fadeIn('down', 0.2)}
                 initial="hidden"
@@ -24,10 +25,10 @@ export const HeroSection = () => {
                 initial="hidden"
                 whileInView={"show"}
                 viewport={{ once: true, amount: 0.3 }}
-                className="text-2xl md:text-6xl font-bold tracking-light">
+                className="text-2xl md:text-5xl font-bold text-primary tracking-light">
                     <span>
                         <TextType 
-                            text={["Hi! Welcome to my Portfolio", "My name is", "Sean Michael A. Borje"]}
+                            text={["Hey there!", "I'm Sean, your next dev!", "Let's build something amazing!"]}
                             typingSpeed={75}
                             pauseDuration={1500}
                             showCursor={true}
