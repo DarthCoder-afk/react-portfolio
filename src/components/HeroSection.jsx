@@ -1,4 +1,4 @@
-import { ArrowDown } from "lucide-react"
+import { ArrowDown, ChevronDownIcon } from "lucide-react"
 import TextType from "./TextType"
 import {motion} from "framer-motion"
 import { fadeIn } from "../variants";
@@ -17,7 +17,7 @@ export const HeroSection = () => {
                 initial="hidden"
                 whileInView={"show"}
                 viewport={{ once: true, amount: 0.3 }} 
-                className="mx-auto rounded-full w-60 h-60 object-cover border-3 border-[#343a40] shadow-lg mb-4 "
+                className="mx-auto rounded-full w-60 h-60 ring-2 ring-[#212529] mb-7"
                 />
              
                 <motion.h1 
@@ -25,7 +25,7 @@ export const HeroSection = () => {
                 initial="hidden"
                 whileInView={"show"}
                 viewport={{ once: true, amount: 0.3 }}
-                className="text-2xl md:text-5xl font-bold text-primary tracking-light">
+                className="text-3xl md:text-5xl font-bold text-primary tracking-light ">
                     <span>
                         <TextType 
                             text={["Hey there!", "I'm Sean, your next dev!", "Let's build something amazing!"]}
@@ -67,8 +67,8 @@ export const HeroSection = () => {
         whileInView={"show"}
         viewport={{ once: true, amount: 0.3 }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
-            <a href="#about"><span className="text-sm text-muted-foreground mb-2">Scroll</span></a>
-            <ArrowDown className="h-5 w-5 text-primary" />
+            <a href="#about"><span className="text-sm text-muted-foreground mb-2">See More</span></a>
+            <ChevronDownIcon className="h-5 w-5 text-primary" />
         </motion.div>
 
     </section>
