@@ -94,13 +94,13 @@ export const NavBar = () => {
                     {/* Right: Social Icons */}
                     <div className="flex space-x-4">
                         <a href="https://github.com/DarthCoder-afk" target="_blank" rel="noopener noreferrer">
-                            <Github className="text-foreground/70 hover:text-primary transition" size={17} />
+                            <Github className="text-foreground/70 hover:fill-[#212529] transition" size={18} />
                         </a>
                         <a href="https://www.linkedin.com/in/seanmichaelarriolaborje" target="_blank" rel="noopener noreferrer">
-                            <Linkedin className="text-foreground/70 hover:text-primary transition" size={17} />
+                            <Linkedin className="text-foreground/70 hover:fill-[#212529] transition" size={18} />
                         </a>
                         <a href="https://www.facebook.com/seanmichael.borje.7/" target="_blank" rel="noopener noreferrer">
-                            <Facebook className="text-foreground/70 hover:text-primary transition" size={17} />
+                            <Facebook className="text-foreground/70 hover:fill-[#212529] transition" size={18} />
                         </a>
                     </div>
 
