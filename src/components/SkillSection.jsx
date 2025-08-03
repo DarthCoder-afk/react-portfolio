@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import {motion} from "framer-motion"
 import { fadeIn } from "../variants";
-import { a } from "framer-motion/client";
+
 
 const skills = [
   // Web Development
@@ -88,14 +88,14 @@ export const SkillSection = () => {
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: true, amount: 0.3 }} 
-        className="grid grid-cols-3 lg:grid-cols-4 gap-3 px-4 place-items-center">
+        className="grid grid-cols-3 lg:grid-cols-4 gap-4 px-4 place-items-center max-w-6xl mx-auto">
             {filteredSKills.map((skill, key) => (
                 <motion.div 
                 variants={fadeIn('up', 0.2)}
                 initial="hidden"
                 animate={"show"}
                 key={key} className="w-20 h-20 md:w-32 h-32 flex items-center justify-center">
-                    <img src={skill.img} alt={skill.name} className="max-h-full max-w-full object-contain hover:scale-110 transition-transform" title={skill.name} />
+                    <img src={skill.img} alt={skill.name} className="max-h-full max-w-full object-contain hover:scale-110 transition-transform animation=['animate-[drop-in_0.5s]', 'animate-[drop-out_0.5s]']" title={skill.name} />
                 </motion.div>
             ))}
         </motion.div>
