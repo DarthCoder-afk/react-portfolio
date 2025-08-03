@@ -4,8 +4,9 @@ import {motion} from "framer-motion"
 import { fadeIn } from "../variants";
 
 const images = [
-  { id: 1, img: "./stacks/balatik.JPG" },
-  { id: 2, img: "./stacks/toga.JPG" },
+  
+  { id: 1, img: "./stacks/toga.JPG" },
+  { id: 2, img: "./stacks/balatik.JPG" },
   { id: 3, img: "./stacks/formal.JPG" }
 ];
 
