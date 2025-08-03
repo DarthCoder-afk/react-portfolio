@@ -10,7 +10,7 @@ const images = [
 ];
 
 export const AboutMe = () => {
-    return <section id="about" className="py-24 px-4 relative">
+    return <section id="about" className="py-25 px-4 relative">
         <div className="container mx-auto max-w-5xl">
             <motion.div
                 variants={fadeIn('up', 0.2)}
@@ -24,35 +24,37 @@ export const AboutMe = () => {
             </motion.div>
           
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 flex-items-center">
                 <motion.div 
                     variants={fadeIn('right', 0.2)}
                     initial="hidden"
                     whileInView={"show"}
                     viewport={{ once: true, amount: 0.3 }}
-                className="order-2 md:order-1 space-y-6 bg-secondary border rounded-lg shadow-xs p-6">
-                    <h3 className="text-2xl font-semibold">Software Developer</h3>
-
-                    <p className="text-muted-foreground">I am a fresh graduate and aspiring software developer with a passion for building software solutions tailored to user or client needs. 
-                        Whether it’s a web application, desktop system, or mobile app, I focus on creating functional and user-friendly experiences. </p>
-
-                    <p className="text-muted-foreground">I enjoy turning ideas into working products and continuously aim to improve my skills and contribute to 
-                        real-world projects. I am currently open for work and excited to join a team where I can grow and make an impact.</p>
-
-                    <div className="flex flex-col items-center">
-                        <p className="text-muted-foreground inline-flex items-center gap-4 mb-2"> <MapPin/> Manila, Philippines</p>
-                        <p className="text-muted-foreground inline-flex items-center gap-4"> <Briefcase/> Open to Work</p>
-                    </div>
+                    className="order-2 md:order-1">
                     
-                    <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-                        <a href="#contact" className="cosmic-button">
-                            Contact Me
-                        </a>
+                    <div className="bg-white border border-gray-200 rounded-lg drop-shadow-md overflow-hidden max-w-2xl">
+                        {/* MacOS window controls - card header */}
+                        <div className="flex items-center px-4 py-3 bg-gray-50 border-b border-gray-200">
+                            <span className="w-3 h-3 rounded-full bg-red-500 mr-2"></span>
+                            <span className="w-3 h-3 rounded-full bg-yellow-400 mr-2"></span>
+                            <span className="w-3 h-3 rounded-full bg-green-500"></span>
+                        </div>
 
-                        <a href="" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300">
-                            View Resume
-                        </a>
-                    </div>
+                        {/* Content section - card body */}
+                        <div className="px-6 py-6 bg-white text-justify">
+                            <br />
+                            <span className="inline-block">Hi :) </span>
+                            <br />
+                            <br />
+                            👋 I'm Sean and I am an aspiring software developer with a passion for building software solutions tailored to user or client needs. 
+                            Whether it's a web application, desktop system, or mobile app, I focus on creating functional and user-friendly experiences 👨‍💻.
+                            <br /><br />
+                            I enjoy turning ideas into working products and continuously aim to improve my skills and contribute to 
+                            real-world projects. I am currently open for work and excited to join a team where I can grow and make an impact 🌏.
+
+                         
+                        </div>
+                    </div>           
                 </motion.div>
 
                 <motion.div 
@@ -60,61 +62,16 @@ export const AboutMe = () => {
                     initial="hidden"
                     whileInView={"show"}
                     viewport={{ once: true, amount: 0.3 }}
-                className="order-1 ml-3 md:order-2 grid grid-cols-1 gap-6 md:flex justify-items-center mb-1">
-
+                    className="order-1 ml-3 md:order-2 grid grid-cols-1 gap-6 md:flex justify-items-center mb-1">
 
                     <Stack
-                        randomRotation={false}
+                        randomRotation={true}
                         sensitivity={120}
                         sendToBackOnClick={true}
                         cardDimensions={{ width: 300, height: 400 }}
                         cardsData={images}/>
 
-                    {/* <div className="gradient-border p-6 card-hover">
-                        <div className="flex items-start gap-4">
-
-                            <div className="p-3 rounded-full bg-primary/10">
-                                <Code className="h-6 w-6 text-primary" />
-                            </div>
-
-                            <div className="text-left">
-                                <h4 className="font-semibold text-lg">Web Development</h4>
-                                <p className="text-muted-foreground">I specialize in creating responsive and interactive web applications.</p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div className="gradient-border p-6 card-hover">
-                        <div className="flex items-start gap-4">
-                            <div className="p-3 rounded-full bg-primary/10">
-                                <User className="h-6 w-6 text-primary" />
-                            </div>
-
-                            <div className="text-left">
-                                <h4 className="font-semibold text-lg">User Experience</h4>
-                                <p className="text-muted-foreground">I focus on creating intuitive and engaging user experiences.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="gradient-border p-6 card-hover">
-                        <div className="flex items-start gap-4">
-                            <div className="p-3 rounded-full bg-primary/10">
-                                <Briefcase className="h-6 w-6 text-primary" />
-                            </div>
-                            <div className="text-left">
-                                <h4 className="font-semibold text-lg">Project Management</h4>
-                                <p className="text-muted-foreground">I have experience in managing projects and leading teams to success.</p>
-                            </div>
-                        </div>
-                    </div> */}
-
-                   
-                    
                 </motion.div>
-
-
             </div>
         </div>
     </section>
