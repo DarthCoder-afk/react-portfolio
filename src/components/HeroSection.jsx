@@ -8,7 +8,7 @@ export const HeroSection = () => {
     return <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center px-4">
         <div className="container max-w-4xl mx-auto text-center z-10">
 
-            <div className="space-y-6">
+            <div className="space-y-4 mb-8">
 
                 <motion.div className="relative w-80 h-80 mx-auto mb-7"
                       variants={fadeIn('down', 1)}
@@ -65,7 +65,7 @@ export const HeroSection = () => {
 
             </div>
 
-            <div className="flex flex-row flex-wrap gap-4 pt-4 justify-center items-center">
+            <div className="flex flex-row flex-wrap gap-5 pt-0 justify-center items-center">
                 <motion.div 
                 variants={fadeIn('up', 3)}
                 initial="hidden"
@@ -98,7 +98,7 @@ export const HeroSection = () => {
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: true, amount: 0.3 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
             <a href="#about"><span className="text-sm text-muted-foreground mb-2">See More</span></a>
             <ChevronDownIcon className="h-5 w-5 text-primary" />
         </motion.div>
