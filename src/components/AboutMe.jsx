@@ -19,13 +19,13 @@ export const AboutMe = () => {
                 whileInView={"show"}
                 viewport={{ once: true, amount: 0.3 }}>
                       <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-                            Get To Know <span className="text-primary">Me</span>
+                            About Me
                       </h2>
 
             </motion.div>
           
 
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 flex-items-center">
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 justify-items-center">
                 <motion.div 
                     variants={fadeIn('right', 0.2)}
                     initial="hidden"
@@ -63,7 +63,7 @@ export const AboutMe = () => {
                     initial="hidden"
                     whileInView={"show"}
                     viewport={{ once: true, amount: 0.3 }}
-                    className="order-1 ml-3 md:order-2 grid grid-cols-1 gap-6 md:flex justify-items-center mb-1">
+                    className="order-1 md:order-2 grid grid-cols-1 gap-6 md:flex justify-items-center mb-1">
 
                     <Stack
                         randomRotation={true}
