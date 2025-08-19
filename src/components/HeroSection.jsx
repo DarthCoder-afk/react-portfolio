@@ -99,8 +99,8 @@ export const HeroSection = () => {
         whileInView={"show"}
         viewport={{ once: true, amount: 0.3 }}
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
-            <a href="#about"><span className="text-sm text-muted-foreground mb-2">See More</span></a>
-            <ChevronDownIcon className="h-5 w-5 text-primary" />
+            <a href="#about"><ChevronDownIcon className="h-10 w-10 text-[#f8f9fa] rounded-full bg-[#212529] p-1" /></a>
+            
         </motion.div>
 
     </section>
