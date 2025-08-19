@@ -49,11 +49,19 @@ export const NavBar = () => {
                 whileInView={"show"}
                 viewport={{ once: true, amount: 0.3}}
                 className="hidden md:flex w-full justify-center mt-1 relative">
-                <div className="w-full max-w-5xl bg-[#f8f9fa] border border-[#6C757D] rounded-full shadow-lg px-6 py-4 flex items-center justify-between relative">
-                    
+                <div className={cn(
+                        "w-full max-w-5xl rounded-full flex items-center justify-between relative transition-all duration-300 ease-in-out",
+                        Scrolled
+                        ? "bg-[#f8f9fa] border border-[#6C757D] shadow-lg px-6 py-4"
+                        : "bg-transparent  py-4 pl-0 pr-0"
+                    )}>
+
                     {/* Left: Name */}
-                    <a href="#hero" className="text-lg font-bold text-primary">
-                        <span className="text-foreground">Sean</span>
+                    <a href="#hero" className={cn(
+                            "text-xl font-bold text-primary transition-all duration-200",
+                            Scrolled ? "ml-0" : "ml-[-12px]"
+                        )}>
+                        <span className="text-foreground">SEAN</span>
                     </a>
 
                     {/* Center: Navigation */}
@@ -61,7 +69,10 @@ export const NavBar = () => {
                     onMouseLeave={() => {
                     setHoverPosition((pv) => ({ ...pv, opacity: 0 }));
                     }}
-                    className="relative flex space-x-6 ">
+                    className={cn(
+                        "relative flex space-x-1 transition-all duration-200",
+                        Scrolled ? "mx-8" : "mx-0"
+                    )}>
                         {navItems.map((item, key) => (
                             <li
                             key={key}
@@ -92,7 +103,10 @@ export const NavBar = () => {
                     </ul>
 
                     {/* Right: Social Icons */}
-                    <div className="flex space-x-4">
+                    <div className={cn(
+                        "flex space-x-4 transition-all duration-200",
+                        Scrolled ? "mr-0" : "mr-[-24px]"
+                    )}>
                         <a href="https://github.com/DarthCoder-afk" target="_blank" rel="noopener noreferrer">
                             <Github className="text-foreground/70 hover:fill-[#212529] transition" size={18} />
                         </a>
