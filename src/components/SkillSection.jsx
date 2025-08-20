@@ -3,7 +3,7 @@ import {motion, AnimatePresence } from "framer-motion"
 import { fadeIn } from "../variants";
 import LogoLoop from './LogoLoop';
 import * as Accordion from "@radix-ui/react-accordion"
-import { AppWindow, Code, MonitorCog } from "lucide-react" // optional icon
+import { AppWindow, Code, MonitorCog } from "lucide-react" 
 import { AccordionItem } from "./ui/AccordionItem";
 
 
@@ -111,17 +111,17 @@ export const SkillSection = () => {
                         setSelected(val || "default"); // clears when closed
                         setActiveCategory(val ? categoryMap[val] : "all"); // sync with skills
                     }}>
-                            <AccordionItem value="item-1" title="Web Development">
+                            <AccordionItem value="item-1" title="Web Development" icon={<AppWindow size={20} />}>
                                I build responsive web applications using HTML, CSS, JavaScript, and React. 
                                 Experienced with Node.js, PHP, MySQL, Firebase, and modern frameworks like Tailwind and Bootstrap.
                             </AccordionItem>
 
-                            <AccordionItem value="item-2" title="Programming and Data Analysis">
+                            <AccordionItem value="item-2" title="Programming and Data Analysis" icon={<Code size={20} />}>
                                 Skilled in Python, R, SQL, and Excel for data analysis and automation. 
                                 Also experienced in Arduino programming and creating data visualizations.
                             </AccordionItem>
 
-                            <AccordionItem value="item-3" title="Other Tools">
+                            <AccordionItem value="item-3" title="Other Tools" icon={<MonitorCog size={20} />}>
                                 Proficient with Git/GitHub, VS Code, PyCharm, Figma, Blender, 3Ds Max, 
                              Unreal Engine, and Adobe Suite (Premiere Pro, After Effects).
                             </AccordionItem>
