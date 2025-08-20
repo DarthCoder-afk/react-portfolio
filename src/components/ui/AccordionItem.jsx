@@ -21,7 +21,7 @@ export function AccordionItem({ value, title, children }) {
                 transition={{ duration: 0.35, ease: "easeInOut" }}
                 className="overflow-hidden"
             >
-                <div className="mt-2 text-neutral-400">{children}</div>
+                <div className="mt-2 text-[#495057]">{children}</div>
             </motion.div>
         </Accordion.Content>
     </Accordion.Item>

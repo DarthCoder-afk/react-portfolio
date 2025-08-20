@@ -112,15 +112,18 @@ export const SkillSection = () => {
                         setActiveCategory(val ? categoryMap[val] : "all"); // sync with skills
                     }}>
                             <AccordionItem value="item-1" title="Web Development">
-                                Content for web development...
+                               I build responsive web applications using HTML, CSS, JavaScript, and React. 
+                                Experienced with Node.js, PHP, MySQL, Firebase, and modern frameworks like Tailwind and Bootstrap.
                             </AccordionItem>
 
                             <AccordionItem value="item-2" title="Programming and Data Analysis">
-                                Content for data analysis...
+                                Skilled in Python, R, SQL, and Excel for data analysis and automation. 
+                                Also experienced in Arduino programming and creating data visualizations.
                             </AccordionItem>
 
                             <AccordionItem value="item-3" title="Other Tools">
-                                Content for Other Tools...
+                                Proficient with Git/GitHub, VS Code, PyCharm, Figma, Blender, 3Ds Max, 
+                             Unreal Engine, and Adobe Suite (Premiere Pro, After Effects).
                             </AccordionItem>
                     </Accordion.Root>
                 </div>
@@ -129,17 +132,21 @@ export const SkillSection = () => {
                 <div className="flex justify-center items-center">
                     <AnimatePresence mode="wait">
                     {selected && (
-                        <motion.img
-                        key={selected || "default"}
-                        src={images[selected || "default"]}
-                        alt={selected || "default"}
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.95 }}
-                        transition={{ duration: 0.2 }}
-                        loading="lazy"
-                        className="max-h-80 rounded-xl shadow-md"
-                        />
+                        <motion.div
+                            key={selected || "default"}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.95 }}
+                            transition={{ duration: 0.2 }}
+                            className="h-80 w-auto flex items-center justify-center"
+                        >
+                            <img
+                            src={images[selected || "default"]}
+                            alt={selected || "default"}
+                            loading="lazy"
+                            className="max-h-full max-w-full object-contain rounded-xl shadow-md transition duration-300 ease-in-out hover:scale-103"
+                            />
+                        </motion.div>
                     )}
                     </AnimatePresence>
                 </div>
