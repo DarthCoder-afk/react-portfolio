@@ -52,7 +52,7 @@ export const NavBar = () => {
                 <div className={cn(
                         "w-full max-w-5xl rounded-full flex items-center justify-between relative transition-all duration-300 ease-in-out",
                         Scrolled
-                        ? "bg-[#f8f9fa] border border-[#6C757D] shadow-lg px-6 py-4"
+                        ? "backdrop-blur bg-[#f8fafc]/80 border border-[#6C757D] shadow-lg px-4 py-4"
                         : "bg-transparent  py-4 pl-0 pr-0"
                     )}>
 
