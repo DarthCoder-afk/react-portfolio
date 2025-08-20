@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
-import { cn } from "@/lib/utils";
-import {motion} from "framer-motion"
+import {motion, AnimatePresence } from "framer-motion"
 import { fadeIn } from "../variants";
+import LogoLoop from './LogoLoop';
+import * as Accordion from "@radix-ui/react-accordion"
+import { AppWindow, Code, MonitorCog } from "lucide-react" // optional icon
+import { AccordionItem } from "./ui/AccordionItem";
 
 
 const skills = [
@@ -19,36 +22,70 @@ const skills = [
 
   // Programming Languages
   { name: "Python", img:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg", category: "programming languages" },
-  { name: "Java", img:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg", category: "programming languages" },
-  { name: "C++", img:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg", category: "programming languages" },
-  { name: "Vb.net", img:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualbasic/visualbasic-original.svg", category: "programming languages" },
+  { name: "Arduino", img:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/arduino/arduino-original.svg", category: "programming languages" },
+  { name: "R", img:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg", category: "programming languages" },
+  { name: "SQL", img:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg", category: "programming languages" },
+  { name: "Microsoft Excel", img: "https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg", category: "programming languages" },
 
   //Productivity Tools
-  { name: "Microsoft Word", img: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Microsoft_Office_Word_%282019%E2%80%93present%29.svg", category: "productivity tools" },
-  { name: "Microsoft Excel", img: "https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg", category: "productivity tools" },
-  { name: "Adobe Premeire Pro", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/premierepro/premierepro-original.svg", category: "productivity tools" },
-  { name: "Adobe After Effects", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-original.svg", category: "productivity tools" },
 
   // Dev Tools
-  { name: "Git/GitHub", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg", category: "dev tools" },
-  { name: "VS Code", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original-wordmark.svg", category: "dev tools" },
-  { name: "PyCharm", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pycharm/pycharm-original-wordmark.svg", category: "dev tools" },
-  { name: "Android Studio", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original-wordmark.svg", category: "dev tools" },
-   { name: "Arduino IDE", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/arduino/arduino-original-wordmark.svg", category: "dev tools" },
-  { name: "Figma", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg", category: "dev tools" },
-  { name: "3Ds Max", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/threedsmax/threedsmax-original.svg", category: "dev tools" },
-  { name: "Blender", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original-wordmark.svg", category: "dev tools" },
-  { name: "Unreal Engine", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original-wordmark.svg", category: "dev tools" },
+  { name: "Git/GitHub", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg", category: "tools" },
+  { name: "VS Code", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original-wordmark.svg", category: "tools" },
+  { name: "PyCharm", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pycharm/pycharm-original-wordmark.svg", category: "tools" },
+  { name: "Android Studio", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original-wordmark.svg", category: "tools" },
+  { name: "R Studio", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rstudio/rstudio-original.svg", category: "tools" },
+  { name: "Figma", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg", category: "tools" },
+  { name: "3Ds Max", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/threedsmax/threedsmax-original.svg", category: "tools" },
+  { name: "Blender", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original-wordmark.svg", category: "tools" },
+  { name: "Unreal Engine", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original-wordmark.svg", category: "tools" },
+  { name: "Microsoft Word", img: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Microsoft_Office_Word_%282019%E2%80%93present%29.svg", category: "tools" },
+
+  { name: "Adobe Premiere Pro", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/premierepro/premierepro-original.svg", category: "tools" },
+  { name: "Adobe After Effects", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-original.svg", category: "tools" },
+
 
 ];
 
-const categories = ["all", "web-development", "programming languages", "dev tools", "productivity tools"];
+
+const images = {
+    "default": "./skills/Webdev.png",
+    "item-1": "./skills/Webdev.png",
+    "item-2": "./skills/data_analyst.jpg",
+    "item-3": "./skills/tools.png",
+
+};
+
+const categoryMap = {
+    "default": "all",
+    "item-1": "web-development",
+    "item-2": "programming languages", 
+    "item-3": "tools",
+};
 
 export const SkillSection = () => {
 
+    
+    const [selected, setSelected] = useState("default");
     const [activeCategory, setActiveCategory] = useState("all");
 
     const filteredSKills = skills.filter((skill) => activeCategory === "all" || skill.category === activeCategory);
+
+     // transform to LogoLoop format
+    const logoData = filteredSKills.map((skill) => ({
+       node: (
+            <div className="flex items-center gap-1 border rounded-full bg-white p-3 shadow">
+                <img
+                    src={skill.img}
+                    alt={skill.name}
+                    className="h-[var(--logoloop-logoHeight)] w-auto object-contain"
+                    draggable={false}
+                />
+                <span className="text-sm md:text-md font-semibold text-[#212529]">{skill.name}</span>
+            </div>
+        ),
+        ariaLabel: skill.name,
+    }));
 
     return <section id="skills" className="py-24 px-4 relative">
         <div className="container mx-auto max-w-5xl">
@@ -64,41 +101,68 @@ export const SkillSection = () => {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: true, amount: 0.3 }} 
-            className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">These are the technologies I have worked with and become familiar with</motion.p>
+            className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">Technologies, tools, and frameworks I use to design and build applications.</motion.p>
 
-            <motion.div 
-            variants={fadeIn('right', 0.2)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: true, amount: 0.3 }} 
-            className="flex flex-wrap justify-center gap-4 mb-8">
-                {categories.map((category, key) => (
-                    <button key={key} className={cn("px-5 py-2 rounded-full transition-colors duration-300 capitalize",
-                        activeCategory == category ? "bg-primary text-primary-foreground" : "bg-secondary/70 text-foreground hover: bg-secondary")} onClick={() => setActiveCategory(category)}>
-                        {category}
-                    </button>
-                ))}
-            </motion.div>
-        
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 justify-items-center">
+
+                <div className="w-full">
+                    <Accordion.Root type="single" collapsible className="space-y-4 max-w-md bg-[#f8f9fa]"  value={selected}
+                        onValueChange={(val) => {
+                        setSelected(val || "default"); // clears when closed
+                        setActiveCategory(val ? categoryMap[val] : "all"); // sync with skills
+                    }}>
+                            <AccordionItem value="item-1" title="Web Development">
+                                Content for web development...
+                            </AccordionItem>
+
+                            <AccordionItem value="item-2" title="Programming and Data Analysis">
+                                Content for data analysis...
+                            </AccordionItem>
+
+                            <AccordionItem value="item-3" title="Other Tools">
+                                Content for Other Tools...
+                            </AccordionItem>
+                    </Accordion.Root>
+                </div>
+
+               {/* Image that changes */}
+                <div className="flex justify-center items-center">
+                    <AnimatePresence mode="wait">
+                    {selected && (
+                        <motion.img
+                        key={selected || "default"}
+                        src={images[selected || "default"]}
+                        alt={selected || "default"}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.95 }}
+                        transition={{ duration: 0.2 }}
+                        loading="lazy"
+                        className="max-h-80 rounded-xl shadow-md"
+                        />
+                    )}
+                    </AnimatePresence>
+                </div>
+
+            </div>
+
+          
         </div>
 
-        <motion.div 
-        key={activeCategory}
-        variants={fadeIn('up', 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: true, amount: 0.3 }} 
-        className="grid grid-cols-3 lg:grid-cols-4 gap-4 px-4 place-items-center max-w-6xl mx-auto">
-            {filteredSKills.map((skill, key) => (
-                <motion.div 
-                variants={fadeIn('up', 0.2)}
-                initial="hidden"
-                animate={"show"}
-                key={key} className="w-20 h-20 md:w-32 h-32 flex items-center justify-center">
-                    <img src={skill.img} alt={skill.name} className="max-h-full max-w-full object-contain hover:scale-110 transition-transform animation=['animate-[drop-in_0.5s]', 'animate-[drop-out_0.5s]']" title={skill.name} />
-                </motion.div>
-            ))}
-        </motion.div>
+        <div className="h-200px relative overflow-hidden">
+            <LogoLoop
+            logos={logoData}
+            speed={70}
+            direction="left"
+            logoHeight={30}
+            gap={50}
+            fadeOut
+            scaleOnHover
+            ariaLabel="Skill logos"
+            className="my-12 max-w-5xl mx-auto"
+            />
+        </div>
         
     </section>
 }
+
