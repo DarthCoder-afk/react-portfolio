@@ -55,7 +55,28 @@ export const AboutMe = () => {
 
                          
                         </div>
-                    </div>           
+                    </div>    
+
+                    <motion.div
+                    variants={fadeIn("up", 0.2)}
+                    initial="hidden"
+                    whileInView={"show"}
+                    viewport={{ once: true, amount: 0.3 }}
+                    className="mt-9"
+                    >
+                        <a
+                            href="#"
+                            className="relative bg-[#f8f9fa] inline-block px-6 py-3 text-sm md:text-base rounded-full border border-[#212529] font-semibold overflow-hidden group"
+                        >
+                            {/* Text */}
+                            <span className="relative z-10 text-primary transition-colors duration-500 group-hover:text-[#f8f9fa]">
+                            View Resume
+                            </span>
+
+                            {/* Liquid fill effect */}
+                            <span className="absolute inset-0 bg-[#212529] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></span>
+                        </a>
+                    </motion.div>
                 </motion.div>
 
                 <motion.div 
