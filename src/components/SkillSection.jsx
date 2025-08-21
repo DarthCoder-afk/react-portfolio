@@ -23,14 +23,16 @@ const skills = [
   // Programming Languages
   { name: "Python", img:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg", category: "programming languages" },
   { name: "Arduino", img:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/arduino/arduino-original.svg", category: "programming languages" },
-  { name: "R", img:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg", category: "programming languages" },
+  { name: "R Programming", img:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg", category: "programming languages" },
   { name: "SQL", img:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg", category: "programming languages" },
   { name: "Microsoft Excel", img: "https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg", category: "programming languages" },
+  { name: "Tableau", img: "https://upload.wikimedia.org/wikipedia/commons/3/32/Tableau_image.png", category: "programming languages" },
 
   //Productivity Tools
 
   // Dev Tools
-  { name: "Git/GitHub", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg", category: "tools" },
+  { name: "GitHub", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg", category: "tools" },
+  { name: "Git", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg", category: "tools" },
   { name: "VS Code", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original-wordmark.svg", category: "tools" },
   { name: "PyCharm", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pycharm/pycharm-original-wordmark.svg", category: "tools" },
   { name: "Android Studio", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original-wordmark.svg", category: "tools" },
@@ -40,7 +42,6 @@ const skills = [
   { name: "Blender", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original-wordmark.svg", category: "tools" },
   { name: "Unreal Engine", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original-wordmark.svg", category: "tools" },
   { name: "Microsoft Word", img: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Microsoft_Office_Word_%282019%E2%80%93present%29.svg", category: "tools" },
-
   { name: "Adobe Premiere Pro", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/premierepro/premierepro-original.svg", category: "tools" },
   { name: "Adobe After Effects", img: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-original.svg", category: "tools" },
 
@@ -117,13 +118,13 @@ export const SkillSection = () => {
                             </AccordionItem>
 
                             <AccordionItem value="item-2" title="Programming and Data Analysis" icon={<Code size={20} />}>
-                                Skilled in Python, R, SQL, and Excel for data analysis and automation. 
-                                Also experienced in Arduino programming and creating data visualizations.
+                                Skilled in Python, R, SQL, Tableau, and Excel for data analysis and automation. 
+                                Also experienced in Arduino programming and IOT development.
                             </AccordionItem>
 
                             <AccordionItem value="item-3" title="Other Tools" icon={<MonitorCog size={20} />}>
-                                Proficient with Git/GitHub, VS Code, PyCharm, Figma, Blender, 3Ds Max, 
-                             Unreal Engine, and Adobe Suite (Premiere Pro, After Effects).
+                                Proficient with Git/GitHub, VS Code, Rstudio, PyCharm, Figma, Blender, 3Ds Max, 
+                             Unreal Engine, Microsoft Office, and Adobe Suite (Premiere Pro, After Effects).
                             </AccordionItem>
                     </Accordion.Root>
                 </div>
