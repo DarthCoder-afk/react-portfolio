@@ -50,7 +50,7 @@ const skills = [
 
 
 const images = {
-    "default": "./skills/Webdev.png",
+    "default": "./skills/default.jpg",
     "item-1": "./skills/Webdev.png",
     "item-2": "./skills/data_analyst.jpg",
     "item-3": "./skills/tools.png",
