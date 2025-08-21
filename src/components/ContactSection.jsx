@@ -35,7 +35,7 @@ export const ContactSection = () => {
             }
         )
     }
-    return <section id="contact" className="py-24 px-4 relative">
+    return <section id="contact" className="py-24 px-4 relative scroll-mt-24">
         <div className="container mx-auto max-w-5xl">
             <motion.h2 
             variants={fadeIn('up', 0.2)}

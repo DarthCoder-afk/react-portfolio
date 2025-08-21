@@ -11,7 +11,7 @@ const images = [
 ];
 
 export const AboutMe = () => {
-    return <section id="about" className="py-25 px-4 relative">
+    return <section id="about" className="py-25 px-4 relative scroll-mt-24">
         <div className="container mx-auto max-w-5xl">
             <motion.div
                 variants={fadeIn('up', 0.2)}

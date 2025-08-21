@@ -73,9 +73,18 @@ export const HeroSection = () => {
                 whileInView={"show"}
                 viewport={{ once: true, amount: 0.3 }}
                 className="mt-8">
-                    <a href="#projects" className="cosmic-button px-5 py-3 text-sm md:text-base rounded-full bg-primary text-white font-semibold transition-colors duration-300">
-                        Explore My Work
-                    </a>
+                     <a
+                            href="#project"
+                            className="relative bg-[#212529] inline-block px-5 py-3 text-sm md:text-base rounded-full border border-[#212529] font-semibold overflow-hidden group"
+                        >
+                            {/* Text */}
+                            <span className="relative z-10 text-[#f8f9fa] transition-colors duration-500 group-hover:text-[#212529]">
+                            Explore Projects
+                            </span>
+
+                            {/* Liquid fill effect */}
+                            <span className="absolute inset-0 bg-[#f8f9fa] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></span>
+                        </a>
                 </motion.div>
 
                 <motion.div 
@@ -84,9 +93,18 @@ export const HeroSection = () => {
                 whileInView={"show"}
                 viewport={{ once: true, amount: 0.3 }}
                 className="mt-8">
-                    <a href="#contacts" className="px-5 py-3 text-sm md:text-base rounded-full bg-[#f8f9fa] border border-primary text-primary font-semibold hover:shadow-[0_0_10px_rgba(206,212,218,1)] transition-colors duration-300 ">
-                        Connect With Me
-                    </a>
+                    <a
+                            href="#contact"
+                            className="relative bg-[#f8f9fa] inline-block px-5 py-3 text-sm md:text-base rounded-full border border-[#212529] font-semibold overflow-hidden group"
+                        >
+                            {/* Text */}
+                            <span className="relative z-10 text-primary transition-colors duration-500 group-hover:text-[#f8f9fa]">
+                            Connect With Me
+                            </span>
+
+                            {/* Liquid fill effect */}
+                            <span className="absolute inset-0 bg-[#212529] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></span>
+                        </a>
                 </motion.div>
             </div>
 
