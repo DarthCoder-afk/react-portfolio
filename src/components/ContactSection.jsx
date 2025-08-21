@@ -67,7 +67,7 @@ export const ContactSection = () => {
                                 <Facebook className="w-6 h-6 text-primary"/>
                             </div>
                             <div className="items-center my-auto">
-                                <a href="mailto:seanmichaelborje179@gmail.com" className="text-muted-foreground">Sean Michael Borje</a>
+                                <a href="https://www.facebook.com/seanmichael.borje.7/" className="text-muted-foreground">Sean Michael Borje</a>
                             </div>
                         </div>
                         
@@ -76,7 +76,7 @@ export const ContactSection = () => {
                                 <Mail className="w-6 h-6 text-primary"/>
                             </div>
                             <div className="items-center my-auto">
-                                <a className="text-muted-foreground">seanmichaelborje179@gmail.com</a>
+                                <a href="mailto:seanmichaelborje179@gmail.com" className="text-muted-foreground">seanmichaelborje179@gmail.com</a>
                             </div>
                         </div>
 
