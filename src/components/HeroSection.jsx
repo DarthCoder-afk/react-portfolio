@@ -32,6 +32,7 @@ export const HeroSection = () => {
                         src="./profile/formal.png" 
                         alt="Sean Michael Borje"
                         className="relative rounded-full w-full h-full object-cover z-10 drop-shadow-xl"
+                        loading="lazy"
                         />
                 </motion.div>
               
