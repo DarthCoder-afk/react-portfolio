@@ -106,7 +106,12 @@ export const SkillSection = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 justify-items-center">
 
-                <div className="w-full">
+                <motion.div 
+                variants={fadeIn('right', 0.2)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: true, amount: 0.3 }} 
+                className="w-full">
                     <Accordion.Root type="single" collapsible className="space-y-4 max-w-md bg-[#f8f9fa]"  value={selected}
                         onValueChange={(val) => {
                         setSelected(val || "default"); // clears when closed
@@ -127,10 +132,15 @@ export const SkillSection = () => {
                              Unreal Engine, Microsoft Office, and Adobe Suite (Premiere Pro, After Effects).
                             </AccordionItem>
                     </Accordion.Root>
-                </div>
+                </motion.div>
 
                {/* Image that changes */}
-                <div className="flex justify-center items-center">
+                <motion.div 
+                variants={fadeIn('left', 0.2)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: true, amount: 0.3 }} 
+                className="flex justify-center items-center">
                     <AnimatePresence mode="wait">
                     {selected && (
                         <motion.div
@@ -150,14 +160,19 @@ export const SkillSection = () => {
                         </motion.div>
                     )}
                     </AnimatePresence>
-                </div>
+                </motion.div>
 
             </div>
 
           
         </div>
 
-        <div className="h-200px relative overflow-hidden">
+        <motion.div 
+        variants={fadeIn('up', 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: true, amount: 0.3 }} 
+        className="h-200px relative overflow-hidden">
             <LogoLoop
             logos={logoData}
             speed={70}
@@ -169,7 +184,7 @@ export const SkillSection = () => {
             ariaLabel="Skill logos"
             className="my-12 max-w-5xl mx-auto"
             />
-        </div>
+        </motion.div>
         
     </section>
 }
