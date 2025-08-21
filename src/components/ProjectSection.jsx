@@ -10,6 +10,9 @@ const proj = [
         image: "/projects/project-1.png",
         tags: ["HTML", "CSS", "Bootstrap", "PHP", "Javascript", "MySQL"],
         demoUrl: "#",
+        role: "Development & Design",
+        year: "2025",
+        bg: "bg-[#52b788]",
         githubUrl: "#",
     },
 
@@ -19,49 +22,38 @@ const proj = [
         description: "A Web Application that allows the Sangguniang Bayan Office to track Resolutions and Municipal Orders",
         image: "/projects/project-2.png",
         tags: ["HTML", "CSS", "Bootstrap", "PHP", "Javascript", "MySQL"],
+        bg: "bg-[#80ed99]",
+        year: "2025",
         demoUrl: "#",
         githubUrl: "#",
     },
 
-        {
+
+    {
         id: 3,
-        title: "CNSC Garments Inventory System",
-        description: "An application that monitors the inventory of the CNSC Garments",
+        title: "Crash Detection Device",
+        description: "An IOT device that detects car crashes and alerts emergency services",
         image: "/projects/project-3.png",
-        tags: ["Vb.net", "MySQL"],
+        tags: ["Arduino", "C++"],
+        bg: "bg-[#adb5bd]",
+        year: "2025",
         demoUrl: "#",
         githubUrl: "#",
     },
 
     {
         id: 4,
-        title: "PillSpenser: IOT Based Medicine Dispenser",
-        description: "An IOT device that dispenses medicine based on the patient's prescription",
+        title: "Case Study: BikeShare",
+        description: "A case study that I made for my Google Data Analytics Professional Certificate",
         image: "/projects/project-4.png",
-        tags: ["Arduino", "C++"],
+        tags: ["R", "SQL", "Excel", "Tableau"],
+        year: "2025",
+        bg: "bg-[#e39695]",
         demoUrl: "#",
         githubUrl: "#",
     },
 
-    {
-        id: 5,
-        title: "Crash Detection Device",
-        description: "An IOT device that detects car crashes and alerts emergency services",
-        image: "/projects/project-5.png",
-        tags: ["Arduino", "C++"],
-        demoUrl: "#",
-        githubUrl: "#",
-    },
 
-    {
-        id: 6,
-        title: "Wire Cutter Machine",
-        description: "A device that automates the wire cutting process",
-        image: "/projects/project-6.png",
-        tags: ["Arduino", "C++"],
-        demoUrl: "#",
-        githubUrl: "#",
-    }
 
 ]
 
@@ -83,51 +75,63 @@ export const ProjectSection = () => {
             className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">Here are some of my recent projects. Each project was carefully
                 crafted with attention to detail, client-based, performance and user-experience</motion.p>
 
-            <motion.div 
-            variants={fadeIn('down', 0.2)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: true, amount: 0.3 }} 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {proj.map((project, key) => (
-                    <div key={key} className="group bg-card rounded-lg border overflow-hidden shadow-xs card-hover">
-                        <div className="h-38 overflow-hidden">
-                            <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                        </div>
-
-                        <div className="p-6">
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {project.tags.map((tags) => (
-                                    <span className="px-2 py-1 text-xs font-medium rounded-full border bg-[#212529] text-secondary">{tags}</span>
-                                ))}
-                            </div>
-
-                            <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
-                            <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
-                            {/* <div className="flex justify-between items-center">
-                                <div className="flex space-x-3">
-                                    <a
-                                    href={project.demoUrl}
-                                    target="_blank"
-                                    className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                                    >
-                                    <ExternalLink size={20} />
-                                    </a>
-                                    <a
-                                    href={project.githubUrl}
-                                    target="_blank"
-                                    className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                                    >
-                                    <Github size={20} />
-                                    </a>
-                                </div>
-                            </div> */}
-                        </div>
-
-                       
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 group">
+                {proj.map((project) => (
+                    <motion.div
+                    key={project.id}
+                    variants={fadeIn("up", 0.2)}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.3 }}
+                    className="flex flex-col transition-all duration-300 
+                    group-hover:blur-xs hover:blur-none"
+                    >
+                    {/* Colored background container */}
+                    <div
+                        className={`w-full h-[300px] rounded-xl ${project.bg} flex items-center justify-center`}
+                    >
+                        <img
+                        src={project.image}
+                        alt={project.title}
+                        className="rounded-xl shadow-lg w-[90%] sm:w-[80%] md:w-[90%] transition duration-300 ease-in-out hover:scale-103"
+                        />
                     </div>
+
+                    {/* Text section */}
+                   <div className="mt-4 text-sm text-muted-foreground">
+                        <div className="flex justify-between items-start mb-1">
+                        <h3 className="text-lg font-semibold text-foreground">
+                            {project.title}
+                        </h3>
+                        <p>{project.year}</p>
+                        </div>
+                        {/* <p className="mb-1">{project.role}</p> */}
+                        <p className="text-xs leading-relaxed">{project.description}</p>
+                    </div>
+                    </motion.div>
                 ))}
-            </motion.div>
+            </div>
+
+            <motion.div
+                    variants={fadeIn("up", 0.2)}
+                    initial="hidden"
+                    whileInView={"show"}
+                    viewport={{ once: true, amount: 0.3 }}
+                    className="mt-12"
+                    >
+                        <a
+                            href="https://github.com/DarthCoder-afk"
+                            className="relative bg-[#f8f9fa] inline-block px-6 py-3 text-sm md:text-base rounded-full border border-[#212529] font-semibold overflow-hidden group"
+                        >
+                            {/* Text */}
+                            <span className="relative z-10 text-primary transition-colors duration-500 group-hover:text-[#f8f9fa]">
+                            View All Projects
+                            </span>
+
+                            {/* Liquid fill effect */}
+                            <span className="absolute inset-0 bg-[#212529] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></span>
+                        </a>
+             </motion.div>
 
         </div>
 
