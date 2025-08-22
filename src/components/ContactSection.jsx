@@ -98,54 +98,98 @@ export const ContactSection = () => {
                 initial="hidden"
                 whileInView={"show"}
                 viewport={{ once: true, amount: 0.3 }} 
-                className="bg-card p-8 rounded-lg shadow-xs">
+                className="bg-card p-8 border border-[#dee2e6] rounded-lg drop-shadow-lg">
                     <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
 
                     <form action="" ref={form} onSubmit={SendEmail} className="space-y-6">
-                        <div className="flex items-center space-x-4">
-                            <label htmlFor="name" className="w-1/4 text-md font-medium mb-2">Name: </label>
-                            <input type="text"
-                            id="name"
-                            name="name"
-                            required
-                            className="w-3/4 px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                            placeholder="Juan Dela Cruz..." />
+                      <div className="relative">
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                required
+                                className="peer w-full px-4 pt-5 pb-2 rounded-md border border-input bg-card 
+                                        focus:outline-hidden focus:ring-2 focus:ring-primary 
+                                        placeholder-transparent"
+                                placeholder=" "
+                            />
+
+                            <label
+                                htmlFor="name"
+                                className="absolute left-4 top-3 text-gray-500 transition-all duration-200 
+                                        peer-placeholder-shown:top-5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400
+                                        peer-focus:-top-2 peer-focus:text-sm peer-focus:text-[#212529] 
+                                        peer-[&:not(:placeholder-shown)]:-top-2 peer-[&:not(:placeholder-shown)]:text-sm peer-[&:not(:placeholder-shown)]:text-[#212529]
+                                        bg-card px-1"
+                            >
+                                Full Name
+                            </label>
                         </div>
 
-                        <div className="flex items-center space-x-4">
-                            <label htmlFor="email" className="w-1/4 text-md font-medium mb-2">Email: </label>
+                        <div className="relative">
                             <input type="email"
                             id="email"
                             name="email"
                             required
-                            className="w-3/4 px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                            placeholder="juandelacruz@gmail.com" />
+                            className="peer w-full px-4 pt-5 pb-2 rounded-md border border-input bg-card 
+                                        focus:outline-hidden focus:ring-2 focus:ring-primary 
+                                        placeholder-transparent"
+                            placeholder=" " />
+                            <label htmlFor="email" className="absolute left-4 top-3 text-gray-500 transition-all duration-200 
+                            peer-placeholder-shown:top-5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400
+                            peer-focus:-top-2 peer-focus:text-sm peer-focus:text-[#212529] 
+                            peer-[&:not(:placeholder-shown)]:-top-2 peer-[&:not(:placeholder-shown)]:text-sm peer-[&:not(:placeholder-shown)]:text-[#212529]
+                            bg-card px-1">Email </label>
+                           
                         </div>
 
-                         <div className="flex items-center space-x-4">
-                            <label htmlFor="subject" className="w-1/4 text-md font-medium mb-2">Subject: </label>
+                         <div className="relative">
                             <input type="text"
                             id="subject"
                             name="subject"
                             required
-                            className="w-3/4 px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                            placeholder="Job Offer, Project Work, Inquiry" />
+                            className="peer w-full px-4 pt-5 pb-2 rounded-md border border-input bg-card 
+                                        focus:outline-hidden focus:ring-2 focus:ring-primary 
+                                        placeholder-transparent"
+                            placeholder=" " />
+                            <label htmlFor="subject" className="absolute left-4 top-3 text-gray-500 transition-all duration-200 
+                            peer-placeholder-shown:top-5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400
+                            peer-focus:-top-2 peer-focus:text-sm peer-focus:text-[#212529] 
+                            peer-[&:not(:placeholder-shown)]:-top-2 peer-[&:not(:placeholder-shown)]:text-sm peer-[&:not(:placeholder-shown)]:text-[#212529]
+                            bg-card px-1">Subject</label>
+    
                         </div>
 
-                        <div className="flex items-start space-x-4">
-                            <label htmlFor="message" className="w-1/4 text-md font-medium mb-2 pt-2">Message: </label>
+                        <div className="relative">
                             <textarea 
                             id="message"
                             name="message"
                             required
-                            className="w-3/4 min-h-[120px] px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                            placeholder="Hello, I'd like to talk about..." />
+                            className="peer w-full px-4 pt-5 pb-2 rounded-md border border-input bg-card 
+                                        focus:outline-hidden focus:ring-2 focus:ring-primary 
+                                        placeholder-transparent"
+                            placeholder=" " />
+                            <label htmlFor="message" className="absolute left-4 top-3 text-gray-500 transition-all duration-200 
+                            peer-placeholder-shown:top-5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400
+                            peer-focus:-top-2 peer-focus:text-sm peer-focus:text-[#212529] 
+                            peer-[&:not(:placeholder-shown)]:-top-2 peer-[&:not(:placeholder-shown)]:text-sm peer-[&:not(:placeholder-shown)]:text-[#212529]
+                            bg-card px-1">Message </label>
                         </div>
 
-                        <button type="submit" disabled={isSubmitting} className={cn("cosmic-button w-full flex items-center justify-center gap-2")}>
-                           
-                            <SendIcon size={16}/>  {isSubmitting ? "Sending..." : "Send Message"}
-                        </button>
+                        <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="relative w-full flex items-center justify-center gap-2 bg-[#212529] px-5 py-3 text-sm md:text-base rounded-full border border-[#212529] font-semibold overflow-hidden group cursor-pointer"
+                        >
+                            {/* Text */}
+                            <span className="relative z-10 text-[#f8f9fa] transition-colors duration-500 group-hover:text-[#212529] flex items-center gap-2">
+                                <SendIcon size={16} />
+                                {isSubmitting ? "Sending..." : "Send Message"}
+                            </span>
+
+                            {/* Liquid fill effect */}
+                            <span className="absolute inset-0 bg-[#f8f9fa] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></span>
+                            </button>
                     </form>
                 </motion.div>
 
