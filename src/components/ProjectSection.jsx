@@ -84,7 +84,7 @@ export const ProjectSection = () => {
                     whileInView="show"
                     viewport={{ once: true, amount: 0.3 }}
                     className="flex flex-col transition-all duration-300 
-                    group-hover:blur-xs hover:blur-none"
+                    group-hover:grayscale-100 hover:filter-none"
                     >
                     {/* Colored background container */}
                     <div
