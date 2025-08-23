@@ -92,7 +92,7 @@ export const NavBar = () => {
                                 onClick={() => setActiveLink(item.href)} // set clicked link as active 
                                 className={cn("transition-colors px-4 py-2 rounded-full", 
                                               activeLink === item.href 
-                                              ? "bg-black text-white" // active = black bg + white text 
+                                              ? "bg-[#212529] text-white" // active = black bg + white text 
                                               : "text-gray-800 hover:text-secondary")}> 
                                 {item.name}</a>
                             </li>
