@@ -87,7 +87,7 @@ export const NavBar = () => {
                                 });
                             }}
                             >
-                            <a href={item.href}>{item.name}</a>
+                            <a href={item.href} className = "text-gray-800 hover:text-secondary active:text-white active:bg-black transition-colors px-4 py-2 rounded-full">{item.name}</a>
                             </li>
                         ))}
                          <motion.div
