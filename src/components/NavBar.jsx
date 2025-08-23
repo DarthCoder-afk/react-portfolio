@@ -14,7 +14,8 @@ const navItems = [
 
 export const NavBar = () => {
     const[Scrolled, setScrolled] = useState(false);
-    const[isMenuOpen, setIsMenuOpen] = useState(false);
+    const[isMenuOpen, setIsMenuOpen] = useState(false);  
+    const [activeLink, setActiveLink] = useState("#hero");
     const [hoverPosition, setHoverPosition] = useState({
     left: 0,
     width: 0,
@@ -87,7 +88,13 @@ export const NavBar = () => {
                                 });
                             }}
                             >
-                            <a href={item.href} className = "text-gray-800 hover:text-secondary active:text-white active:bg-black transition-colors px-4 py-2 rounded-full">{item.name}</a>
+                            <a href={item.href}
+                                onClick={() => setActiveLink(item.href)} // set clicked link as active 
+                                className={cn("transition-colors px-4 py-2 rounded-full", 
+                                              activeLink === item.href 
+                                              ? "bg-black text-white" // active = black bg + white text 
+                                              : "text-gray-800 hover:text-secondary")}> 
+                                {item.name}</a>
                             </li>
                         ))}
                          <motion.div
