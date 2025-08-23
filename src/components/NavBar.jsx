@@ -20,8 +20,29 @@ export const NavBar = () => {
     left: 0,
     width: 0,
     opacity: 0,
-    });
+    });    
 
+useEffect(() => {
+  const sections = document.querySelectorAll("section[id]");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveLink(`#${entry.target.id}`);
+        }
+      });
+    },
+    { threshold: 0.6 } // 60% visible
+  );
+
+  sections.forEach((section) => observer.observe(section));
+
+  return () => {
+    sections.forEach((section) => observer.unobserve(section));
+  };
+}, []);
+    
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 10);
@@ -89,7 +110,6 @@ export const NavBar = () => {
                             }}
                             >
                             <a href={item.href}
-                                onClick={() => setActiveLink(item.href)} // set clicked link as active 
                                 className={cn("transition-colors px-4 py-2 rounded-full", 
                                               activeLink === item.href 
                                               ? "bg-[#212529] text-white" // active = black bg + white text 
