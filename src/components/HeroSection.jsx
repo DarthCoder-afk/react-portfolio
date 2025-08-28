@@ -112,16 +112,6 @@ export const HeroSection = () => {
 
         </div>
 
-        <motion.div 
-        variants={fadeIn('up', 6)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: true, amount: 0.3 }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
-            <a href="#about"><span className="text-sm text-muted-foreground mb-2">See More</span></a>
-            <ChevronDownIcon className="h-5 w-5 text-primary" />
-            
-        </motion.div>
 
     </section>
 }
